@@ -1,0 +1,38 @@
+{
+  "name": "@earthtechnollogy/earthstorage-sdk",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "description": "EarthStorage SDK for NodeJS",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earthtechnollogy/EarthStorage-SDK-Node.git"
+  },
+  "author": {
+    "name": "EarthTechnollogy",
+    "email": "jcruzaraujoneto@earthtechnollogy.com",
+    "url": "https://earthtechnollogy.com"
+  },
+  "bugs": {
+    "url": "https://github.com/earthtechnollogy/EarthStorage-SDK-Node/issues"
+  },
+  "keywords": [
+    "storage",
+    "EarthStorage",
+    "EarthTechnollogy"
+  ],
+  "homepage": "https://github.com/earthtechnollogy/EarthStorage-SDK-Node#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
