@@ -1,9 +1,10 @@
-import axios, { AxiosInstance, Method } from 'axios'
+import axios, { AxiosInstance, Method, ResponseType } from 'axios'
 
 import Environment from './Environment'
 
 interface Options {
-  query?: Record<string, string>
+  query?: Record<string, string>,
+  responseType?: ResponseType
 }
 
 export default class Api {
@@ -21,9 +22,12 @@ export default class Api {
   private client<T extends any, U extends any> (method: Method, path: string, data?: U, options?: Options) {
     if (!path) path = ''
     if (!options) options = {}
-    path += this.objectToQuery(options.query || {})
+    const query = this.objectToQuery(options.query || {})
+
+    path += query === '?' ? '' : query
+    const responseType = options.responseType
     return this.request<T>((api, resolve, reject) => {
-      api.request({ method, url: path, data })
+      api.request({ method, url: path, data, responseType })
         .then(res => resolve(res.data))
         .catch(error => this.error(error, reject))
     })
